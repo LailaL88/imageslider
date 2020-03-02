@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align:center">
+    
+    <img src="horse1.jpg" id="myImage" style="height:500px; width:50%"><br>
+    <button id="prevBtn" onclick="prev()" style="background-color: orange; color:peachpuff;font-weight: bold; border-radius:5px;padding:20px;">Prev</button>
+    <button id="nextBtn" onclick="next()" style="background-color: orange; color:peachpuff;font-weight: bold;border-radius:5px;padding:20px;">Next</button>
+    </div>
+    <style>
+        @media only screen and (max-width: 1024px){
+            div,img {
+                width:100%!important;
+                height:400px!important;
+            }
+        }
+    </style>
+    <script>
+        let i = 1;
+        imageArray = ["horse1.jpg","horse2.jpg","horse3.jpg", "horse4.jpg","horse5.jpg","horse6.jpg"];
+        function slide(){
+        
+        document.getElementById("myImage").setAttribute("src", imageArray[i]);
+        i++;
+        if(i > imageArray.length-1){
+            i = 0;
+        }
+        setTimeout(slide,7000);
+        }
+        window.onload = slide;
+
+        function next(){
+            document.getElementById("myImage").setAttribute("src", imageArray[i]);
+            i++;
+        if(i > imageArray.length-1){
+            i = 0;
+        }
+        }
+        
+        function prev(){
+            document.getElementById("myImage").setAttribute("src", imageArray[i]);
+            i--;
+        if(i < 0){
+            i = 5;
+        }
+        }
+        
+    </script>
+</body>
+</html>

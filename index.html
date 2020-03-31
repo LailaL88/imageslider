@@ -35,19 +35,19 @@
         window.onload = slide;
 
         function next(){
-            document.getElementById("myImage").setAttribute("src", imageArray[i]);
             i++;
         if(i > imageArray.length-1){
             i = 0;
         }
+            document.getElementById("myImage").setAttribute("src", imageArray[i]);
         }
         
         function prev(){
-            document.getElementById("myImage").setAttribute("src", imageArray[i]);
             i--;
         if(i < 0){
             i = 5;
         }
+            document.getElementById("myImage").setAttribute("src", imageArray[i]);
         }
         
     </script>
